@@ -9,7 +9,7 @@ class GoogleChartHelper extends AppHelper {
 	/**
 	 * Google chart API url
 	 */
-	const CHART_API_URL = 'http://%d.chart.apis.google.com/chart?';
+	const CHART_API_URL = 'http://%d.chart.apis.google.com/chart?chf=bg,s,65432100&';
 	/**
 	 * Helpers
 	 */
