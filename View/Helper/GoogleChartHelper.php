@@ -9,7 +9,7 @@ class GoogleChartHelper extends AppHelper {
 	/**
 	 * Google chart API url
 	 */
-	const CHART_API_URL = 'http://%d.chart.apis.google.com/chart?chf=bg,s,65432100&';
+	const CHART_API_URL = 'http://%d.chart.apis.google.com/chart?';
 	/**
 	 * Helpers
 	 */
@@ -60,7 +60,8 @@ class GoogleChartHelper extends AppHelper {
 		$this->_params = array(
 			'chbh' => 'a',
 			'chds' => 'a',
-			'chs' => '300x300'
+			'chs' => '300x300',
+			'chf' => 'bg,s,00000000',
 		);
 		$this->_ctrD = 0;
 		$this->_ctrA = 0;
@@ -86,6 +87,7 @@ class GoogleChartHelper extends AppHelper {
 		$url .= 'chd=t:'.implode('|', $data).'&amp;';
 		// add data colors
 		$url .= 'chco='.implode(',', $this->_dataColors).'&amp;';
+		// 
 		
 		// image params
 		$tmp = explode('x', $this->_params['chs']);
@@ -154,6 +156,14 @@ class GoogleChartHelper extends AppHelper {
 	 */
 	public function setPieChartLabels($values) {
 		$this->_params['chl'] = implode('|', $values);
+		return $this;
+	}
+	
+	/**
+	 * Set chart background color
+	 */
+	public function setBackgroundColor($color = '000000', $opacity = '00') {
+		$this->_params['chf'] = 'bg,s,'.$this->_color($color).$opacity;
 		return $this;
 	}
 	
