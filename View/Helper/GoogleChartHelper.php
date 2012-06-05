@@ -87,7 +87,6 @@ class GoogleChartHelper extends AppHelper {
 		$url .= 'chd=t:'.implode('|', $data).'&amp;';
 		// add data colors
 		$url .= 'chco='.implode(',', $this->_dataColors).'&amp;';
-		// 
 		
 		// image params
 		$tmp = explode('x', $this->_params['chs']);
