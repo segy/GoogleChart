@@ -90,6 +90,8 @@ class GoogleChartHelper extends AppHelper {
 		
 		// image params
 		$tmp = explode('x', $this->_params['chs']);
+		if (array_key_exists('imgs', $this->_params))
+			$tmp = explode('x', $this->_params['imgs']);
 		$im = array('width' => $tmp[0], 'height' => $tmp[1]);
 		if (array_key_exists('chtt', $this->_params))
 			$im['alt'] = $this->_params['chtt'];
@@ -141,7 +143,15 @@ class GoogleChartHelper extends AppHelper {
 		$this->_params['chs'] = $this->_int($width).'x'.$this->_int($height);
 		return $this;
 	}
-	
+
+	/**
+	 * Set container size
+	 */
+	public function setContainerSize($width, $height) {
+		$this->_params['imgs'] = $this->_int($width).'x'.$this->_int($height);
+		return $this;
+	}
+
 	/**
 	 * Set margins
 	 */
