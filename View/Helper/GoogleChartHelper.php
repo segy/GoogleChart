@@ -2,14 +2,14 @@
 App::uses('AppHelper', 'Helper');
 
 /**
- * Helper for working with Google chart API
+ * Helper for working with Image-Charts (a drop-in-replacement for the deprecated Google Image Charts)
  */
 
 class GoogleChartHelper extends AppHelper {
 	/**
-	 * Google chart API url
+	 * Image-Charts API url
 	 */
-	const CHART_API_URL = 'http://%d.chart.apis.google.com/chart?';
+	const CHART_API_URL = 'https://image-charts.com/chart?';
 	/**
 	 * Helpers
 	 */
